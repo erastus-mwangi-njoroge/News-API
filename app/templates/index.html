@@ -12,3 +12,22 @@
     <img src="http://news.itu.int/wp-content/uploads/2018/10/satellite-image-promo.jpg" alt="Satellite" width="700">
   </div>
 </div>
+<div class="row">
+  {%for source in sources %}
+  <div class="col-sm-3">
+    <div class="card" style="background-color: #a2db1c">
+      <div class="card-body">
+        <h4 class="card-title text-center"><strong>From {{source.name}} </strong></h4>
+        <a
+          href="{{source.url}}"
+          target="_blank"
+          class="btn btn-primary btn-block"
+          >Visit Site</a
+        >
+        <a href="/source/{{source.id}}" class="btn btn-danger btn-block"
+          >Read the Article</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
